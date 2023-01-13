@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import farms from "../Data/farms";
-import { Card } from "react-bootstrap";
 import "../Styles/ProductDetails.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";

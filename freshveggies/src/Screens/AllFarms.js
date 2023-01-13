@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import "../Styles/Poultry.css";
 import Footer from "./Footer";
-import { additem } from "../Redux/Action";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../Styles/AllFarms.css";
 
 const AllFarms = () => {

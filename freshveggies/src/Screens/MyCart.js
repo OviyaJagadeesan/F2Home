@@ -34,7 +34,9 @@ const MyCart = () => {
 
   const goHomeHandler=()=>{
     navigate("/home");
+    window.scrollTo(0,0);
   }
+
 
   if (value.length>0) {
     return (
@@ -44,8 +46,27 @@ const MyCart = () => {
         </div>
         <div className="cart-page-div">
           <div className="cart-header">
+          <nav aria-label="breadcrumb" style={{ marginTop: "20px" }}>
+              <ol class="breadcrumb">
+                <li
+                  class="breadcrumb-item"
+                  style={{ color: "#6B7885", cursor: "pointer" }}
+                  onClick={goHomeHandler}
+                >
+                  Home
+                </li>
+                <li
+                  class="breadcrumb-item active"
+                  style={{ color: "#80B435", cursor: "pointer" }}
+                  aria-current="page"
+                >
+                  My Cart
+                </li>
+              </ol>
+            </nav>
             <p style={{fontSize:"26px",fontWeight:"500",color:"#415162"}}>My Cart ({value.length})</p>
           </div>
+
           <div className="card page">
             <div className="card details-div-head">
               <div className="row cart-body">

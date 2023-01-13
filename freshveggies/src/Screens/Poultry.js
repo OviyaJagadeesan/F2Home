@@ -37,43 +37,8 @@ const Poultry = () => {
 
   const goHome = () => {
     navigate("/home");
+    window.scrollTo(0,0);
   };
-
-
-
-  // const [pFilter, setPFilter] = useState("");
-  // const [egg,setEgg]=useState(false);
-  // const [chicken,setChicken]=useState(false);
-  // const [selection,setSelection]=useState(false);
-
-  // const EggsHandler=()=>{
-  //   setEgg(!egg);
-  //   setSelection(!selection);
-  //   console.log("egg",egg);
-  //   if(egg===true){
-  //     setPFilter("Eggs");
-  //     console.log("eggf",pFilter);
-  //   }
-  // };
-
-  // useEffect(()=>{
-
-  // },[egg]);
-
-  // useEffect(()=>{
-
-  // },[chicken]);
-
-  // const ChickenHandler=()=>{
-  //   setChicken(!chicken);
-  //   setSelection(!selection);
-  //   console.log("chicken",chicken);
-  //   if(chicken===true){
-  //     setPFilter("Chicken");
-  //     console.log("chicken",pFilter);
-  //   }
-  // };
-
 
   let filterProduct;
   const [filterProducts, setFilterProducts] = useState();
@@ -83,8 +48,6 @@ const Poultry = () => {
   const FilterHandler = (e) => {
     console.log("e", e);
     console.log("e.target.value", e.target.value);
-    // setPFilter(e.target.value);
-    // setSelection(!selection);
     if (e.target.checked) {
       console.log("checked",e.target.value,e.target.checked)
       setPFilter((prevState) => [...prevState, e.target.value]);
@@ -418,7 +381,6 @@ const Poultry = () => {
                             </div>
                           </div>
                           <button
-                            // className="cart-buttons"
                             className={`${
                               product.stack === "Add to Cart"
                                 ? "greenBG"
@@ -456,7 +418,6 @@ const Poultry = () => {
                           <div style={{ padding: "10px", height: "220px" }}>
                             <h6>
                               {product.name}
-                              {/* <ReadMore length={20}></ReadMore> */}
                             </h6>
                             <p className="farm-text">{product.farm}</p>
                             <ReadMore style={{ height: "20%" }} length={40}>
