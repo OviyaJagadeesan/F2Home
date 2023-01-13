@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/EditProfile.css"
+import "../Styles/ChangePassword.css"
 
 const ChangePassword = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../Styles/EditProfile.css"
+import "../Styles/CustomerSupport.css"
 
 const CustomerSupport = () => {
   return (

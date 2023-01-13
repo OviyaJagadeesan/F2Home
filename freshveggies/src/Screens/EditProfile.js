@@ -15,7 +15,6 @@ import ChangePassword from "./ChangePassword";
 import CustomerSupport from "./CustomerSupport";
 import Settings from "./Settings";
 import { useNavigate } from "react-router-dom";
-import {GiHamburgerMenu} from "react-icons/gi";
 import {AiOutlineArrowLeft} from "react-icons/ai";
 const EditProfile = () => {
   const navigate = useNavigate();

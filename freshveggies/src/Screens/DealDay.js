@@ -3,7 +3,6 @@ import Header from "./Header";
 import "../Styles/Poultry.css";
 import Footer from "./Footer";
 import { Card } from "react-bootstrap";
-import dealoftheday from "../Data/DealOfTheDay";
 import { additem } from "../Redux/Action";
 import { useDispatch } from "react-redux";
 import freshandlocal from "../Data/FreshandLocal";
@@ -102,7 +101,6 @@ const Poultry = () => {
                   </div>
                   <button
                     className="cart-button"
-                    // onClick={}
                     onClick={() => cartHandler(user)}
                   >
                     {user.stack}
@@ -116,7 +114,6 @@ const Poultry = () => {
       <div>
         <Footer />
       </div>
-      {/* </div> */}
     </div>
   );
 };

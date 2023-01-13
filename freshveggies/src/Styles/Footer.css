@@ -8,16 +8,19 @@
     width: 100%;
     overflow: hidden;
 }
+
 .app-logo-div{
     width: 30%;
     padding: 40px;
 
 }
+
 .app-logo{
     background:url("../Images/Logo.png")0% 0% no-repeat padding-box;
     height: 70px;
     width: 50%;
 }
+
 .app-logo-div1{
     width: 20%; 
     padding: 40px; 
