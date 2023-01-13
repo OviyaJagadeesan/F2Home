@@ -1,0 +1,79 @@
+.dairy-promo {
+    background: url("../Images/Dairy-Promo.png") 0% 0% no-repeat padding-box;
+    height: 186px;
+    width: 186px;
+    background-size: cover;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.promo-text{
+    border: 1px solid #80B435;
+    background-color: #80B435;
+    color: white;
+    margin: 160px 0px 0px 0px;
+    border-radius: 0px 8px 0px 8px;
+    width: 90%;
+    padding-left: 10px;
+}
+.poultry-promo{
+    background:url("../Images/Poultry-promo.png")0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 186px;
+    width: 186px;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}
+
+
+.seafood-promo{
+    background:url("../Images/Seafood-promo.png")0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 186px;
+    width: 186px;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}
+
+
+.vegetables-promo{
+    background:url("../Images/vegetables-promo.png")0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 186px;
+    width: 186px;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.fresh-fruits-promo{
+    background:url("../Images/fresh-fruits-promo.png")0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 186px;
+    width: 186px;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}
+.flowers-promo{
+    background:url("../Images/flowers-promo.png")0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 186px;
+    width: 186px;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}
+.herbs-promo{
+    background:url("../Images/herbs-promo.png")0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 186px;
+    width: 186px;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}
+.seasoning-promo{
+    background:url("../Images/seasoning-promo.png")0% 0% no-repeat padding-box;
+    background-size: cover;
+    height: 186px;
+    width: 186px;
+    margin: 30px 0px 0px 10px;
+    cursor: pointer;
+}

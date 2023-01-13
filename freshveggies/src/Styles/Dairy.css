@@ -1,0 +1,11 @@
+.dairy-promo-img{
+    background: url("../Images/Yoghurt.png")0% 0% no-repeat padding-box;
+    margin-top: 80px;
+    height: 500px;
+}
+
+.dairy-home-div{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}

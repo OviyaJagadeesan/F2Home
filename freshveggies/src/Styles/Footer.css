@@ -1,0 +1,69 @@
+.footer-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: fit-content;
+    background-color: #C0C5CB;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+.app-logo-div{
+    width: 30%;
+    padding: 40px;
+
+}
+.app-logo{
+    background:url("../Images/Logo.png")0% 0% no-repeat padding-box;
+    height: 70px;
+    width: 50%;
+}
+.app-logo-div1{
+    width: 20%; 
+    padding: 40px; 
+}
+.app-logo-div2{
+    width:20%;
+    padding: 40px; 
+}
+.text-login2{
+    padding: 5px;
+    cursor: pointer;
+}
+.text-login3{
+    padding: 5px;
+    color: white;
+    text-align: justify;
+    line-height: 30px;
+}
+.app-logo-div3{
+    width: 30%;
+    padding: 40px; 
+}
+.text-login{
+    padding: 10px;
+}
+.app-download-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.apple-store{
+    background: url("../Images/Apple\ Store.png") 0% 0% no-repeat padding-box;
+    width: 140px;
+    height: 50px;
+}
+
+.play-store{
+    background: url("../Images/Google\ Play.png") 0% 0% no-repeat padding-box;
+    width: 140px;
+    height: 50px;
+}
+
+
+@media only screen and (min-width:280px) and (max-width:560px){
+    .footer-div{
+        width: 100%;
+    }
+}

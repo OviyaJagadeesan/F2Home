@@ -1,0 +1,70 @@
+.lguFiu {
+    width: 98% !important;
+}
+
+.jtKTCe {
+    display: none !important;
+}
+
+.Slxdj {
+    background-color: white !important;
+    box-shadow: none !important;
+}
+
+.kXteup {
+    background-color: white !important;
+    box-shadow: none !important;
+}
+
+.veg-products-div {
+    display: flex;
+}
+
+.veg-products-frame {
+    background: url("../Images/FruitsVeg.png") top no-repeat padding-box;
+    height: 100vh;
+    width: 120%;
+    background-size: contain;
+}
+.kavz
+{
+    background-color: red;
+    height: 200vh;
+    width: 200vw;
+}
+@media only screen and (max-width:576px) {
+    .headings {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        margin-left: 0px !important;
+        /* width: 100%; */
+        /* text-align: center; */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+.promo-texts{
+    border: 1px solid #80B435;
+    width: 135px;
+    background-color: #80B435;
+    border-radius: 0px 8px 0px 8px ;
+    color: white;
+    padding-left: 10px;
+    margin-top: -46px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.name-farm{
+    font-size: 18px;
+    color: black;
+    font-family: Open-Sans;
+    padding-top: 10px;
+}
+
+.image-farm{
+    margin-top: 20px;
+    display: flex;
+}

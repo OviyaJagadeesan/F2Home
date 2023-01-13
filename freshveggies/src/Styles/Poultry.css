@@ -1,0 +1,101 @@
+.fluid{
+    margin-top: 80px;
+}
+
+.whole-div{
+    margin: 0px 20px 0px 20px;
+}
+
+.side-bar{
+    border: 1px solid;
+}
+
+.right-div{
+    margin-bottom: 20px;
+}
+
+.card-body{
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+}
+
+.card-details{
+    padding: 10px;
+    height: 200px;
+}
+
+.farm-text {
+    color: #6B7885;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.weight-price-text{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    font-size: 12px;
+    height: auto;
+}
+
+.weight{
+    /* width:25%; */
+    margin: auto;
+    color: #6B7885;
+}
+
+.notkd{
+    /* width:40%; */
+    margin: auto;
+    text-decoration: line-through;
+    color: #6B7885;
+}
+
+.kd{
+    /* width:40%; */
+    margin: auto;
+    color: #415162;
+}
+
+.details-descript{
+    display: none;
+}
+
+@media only screen and (max-width:768px){
+    .sidebar{
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:800px) {
+    .align-center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.greenBG{
+     border: 0px solid #80B435;
+     text-align: center;
+     background-color: #80B435;
+     color: white;
+     border-radius: 3px;
+     width: 100%;
+}
+
+.grayBG{
+     border: 0px solid #C0C5CB;
+     text-align: center;
+     background-color: #C0C5CB;
+     color: white;
+     border-radius: 3px;
+     width: 100%;
+}
+
+.greenBG:hover,
+.greenBG:active{
+    background-color: darkgreen;
+}

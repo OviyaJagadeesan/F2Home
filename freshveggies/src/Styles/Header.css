@@ -1,0 +1,252 @@
+.whole-home-div {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.header {
+    height: 80px;
+    width: 100vw;
+    flex-direction: row;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.logo {
+    cursor: pointer;
+    height: 80px;
+    width: 42%;
+    margin-left: 5%;
+    background: url("../Images/Logo.png") 0% no-repeat;
+}
+
+.shop-by-category {
+    height: 50px !important;
+    margin: 28px 0px 0px 90px;
+    border: none;
+    width: 20%;
+    outline: none;
+    cursor: pointer;
+}
+
+.shop-by-category:hover{
+    color: #80B435;
+}
+.farms {
+    width: 10%;
+    margin: 30px -101px 0px -260px;
+    cursor: pointer;
+}
+
+.other-sec {
+    /* height: 80px; */
+    /* width: 60%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 156px;
+}
+
+.search {
+    height: 80px;
+    width: 19%;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.search-icon {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 20px;
+}
+
+.search-text {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.location {
+    height: 80px;
+    width: 24%;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.location-icon {
+    margin-top: auto;
+    /* margin-bottom: auto; */
+    height: 20px;
+}
+
+.location-text {
+    margin-top: 35px;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.location-arrow {
+    margin-top: 14px;
+    height: 50px;
+    width: 26px;
+}
+
+.profile {
+    cursor: pointer;
+}
+
+.profile-icon {
+    margin-top: 23px;
+    margin-left: 10px;
+    height: 20px;
+}
+
+.notify {
+    cursor: pointer;
+}
+
+.notify-icon {
+    margin-top: 22px;
+    margin-left: 20px;
+    height: 20px;
+}
+
+.cart {
+    cursor: pointer;
+}
+
+.cart-icon {
+    margin-top: 22px;
+    margin-left: 20px;
+    height: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .other-sec1 {
+        height: 80px;
+        width: 70px;
+        margin-top: 7px;
+        background: url("../Images/hamburger.png") 0% no-repeat;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .search,
+    .location,
+    .profile-icon,
+    .cart-icon,
+    .notify-icon,
+    .other-sec,
+    .farms,
+    .shop-by-category {
+        display: none;
+    }
+}
+
+.veg-div {
+    display: flex;
+    margin: 100px;
+}
+
+body {
+    background-color: rgb(236, 232, 232);
+}
+
+.carousel-div {
+    display: flex;
+}
+
+.demo {
+    width: 200px;
+    height: 220px;
+    background-color: gainsboro;
+    margin-top: 55px;
+    margin-left: -50px;
+}
+
+.demo-card {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.form-control {
+    width: 140px !important;
+    border: none !important;
+    padding: 0px !important;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    cursor: pointer;
+}
+
+.align {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 200px !important;
+    margin-top: -20px;
+    cursor: pointer !important;
+}
+
+@media only screen and (max-width:500px) {
+    .header {
+        /* justify-content: space-between;
+        display: list-item; */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        cursor: pointer;
+        height: 80px;
+        width: 42%;
+        margin-left: 5%;
+        background: url("../Images/Logo.png") 0% no-repeat;
+    }
+
+    
+}
+
+@media only screen and (min-width:500px) and (max-width:720px){
+    .logo {
+        cursor: pointer;
+        height: 80px;
+        width: 60%;
+        margin-left: 5%;
+        background: url("../Images/Logo.png") 0% no-repeat;
+    }
+}
+
+@media only screen and (min-width:280px) and (max-width:350px){
+    .logo{
+        z-index: 1;
+    }
+}
+
+.badge {
+    position: relative;
+    top: -29px;
+    left: 29px;
+    border: 1px solid black;
+    border-radius: 50% !important;  
+    height: 15px;
+    width: 5px !important;
+    background-color: red;
+}

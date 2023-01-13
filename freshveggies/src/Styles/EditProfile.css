@@ -1,0 +1,139 @@
+.edit-profile-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-profile-bottom-div {
+    margin-top: 80px;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    /* margin-left: 39px; */
+}
+
+.edit-profile-details{
+    padding: 10px;
+}
+
+.left-div {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: none !important;
+    border-radius: 0px !important;
+}
+
+.right-div {
+    margin: -730px 0px 0px 207px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+}
+
+.name {
+    margin: 40px 0px 0px 53px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile-change-img {
+    height: 100px;
+    width: 100px;
+    margin: 0px 0px 0px 35px;
+    color: gainsboro;
+}
+
+.div-profile {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.div-profile:active{
+    color: #80B435 !important;
+}
+
+.profile-img {
+    margin: 5px 0px 0px 0px;
+}
+
+.profile-text {
+    margin: 0px 0px 0px 20px;
+}
+
+.buttons {
+    border: 1px solid #80B435;
+    margin: 10px 0px 20px 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #80B435;
+    color: white;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.cancel-button{
+    color: red;
+    margin: 20px;
+}
+
+.personal-details {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    width: 90%;
+}
+
+.text {
+    margin: 10px 0px 0px 20px;
+}
+
+.input-personal-details {
+    width: 40%;
+    margin: 10px 0px 10px 20px;
+    border: 1px solid #C0C5CB;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.input-personal-details2 {
+    width: 90%;
+    margin: 10px 0px 10px 20px;
+    border: 1px solid #C0C5CB;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.input-personal-details:focus{
+    outline: none;
+}
+
+.input-personal-details2:focus{
+    outline: none;
+}
+
+.error-view {
+    margin: 20px 0px 0px 0px;
+    color: red;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.left-arrow{
+    margin-left:38px;
+    margin-top:100px;
+    margin-bottom:-60px;
+}
+
+@media only screen and (max-width:1300px){
+    .edit-profile-div{
+        font-size: 20px;
+    }
+    .personal-details{
+        font-size: 20px;
+    }
+}

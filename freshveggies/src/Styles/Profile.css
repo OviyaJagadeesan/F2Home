@@ -1,0 +1,192 @@
+.profile-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 60px 0px 0px 0px;   
+}
+
+.app-download {
+    background: url("../Images/APP.png")0% 0% no-repeat padding-box;
+    height: 579px;
+    width: 322px;
+}
+
+.login-register {
+    width: 25%;
+    margin: 50px 20px 0px 20px;
+    height: fit-content;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-text {
+    margin: 20px 0px 0px 0px;
+    text-align: justify;
+}
+.register-text{
+    margin: 20px 0px 0px 0px;
+    text-align: justify;
+}
+
+.email-div {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #C0C5CB;
+    margin: 20px 0px 0px 0px;
+    border-radius: 8px;
+    align-items: center;
+    font-size: 16px;
+}
+
+.email-input {
+    border: none !important;
+    outline: none;
+    margin: 0px 0px 0px 10px;
+}
+
+.password-input {
+    border: none !important;
+    outline: none;
+    margin: 0px 0px 0px 10px;
+}
+
+.email-input:focus {
+    outline: none !important;
+}
+
+.password-div {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #C0C5CB;
+    margin: 20px 0px 0px 0px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.login-btn {
+    border: 1px solid #80B435;
+    margin: 20px 0px 0px 0px;
+    padding: 10px;
+    text-align: center;
+    background-color: #80B435;
+    color: white;
+    border-radius: 8px;
+}
+
+.checkbox-div{
+    text-align: center;
+    color: #6B7885;
+}
+
+.checkbox-img{
+    margin: 20px 0px 0px 20px;
+}
+
+.signed-in{
+    margin: 20px 0px 0px 20px;
+}
+
+.form-check-input:checked{
+    border-color: #80B435 !important;
+    background-color: #80B435 !important;
+}
+.forgot-password{
+    text-align: center;
+    color: #6B7885;
+    margin-top: auto;
+}
+.send-code {
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+}
+
+.proceed-btn {
+    border: 1px solid #80B435;
+    margin: 20px 0px 0px 0px;
+    padding: 10px;
+    text-align: center;
+    background-color: #80B435;
+    color: white;
+    border-radius: 8px;
+}
+
+.error-view {
+    margin: 20px 0px 0px 0px;
+    color: red;
+    text-align: center;
+}
+
+.nav-tabs {
+    isolation: unset;
+    color:black ;
+    border-color: white !important;
+    border-bottom-color: white;
+}
+
+.nav-link.active{
+    border: none !important;
+    isolation: unset;
+    color:#80B435 !important;
+    border-bottom-color: #80B435;
+}
+
+.mb-3{
+    justify-content: center;
+}
+
+a{
+    color: black !important;
+}
+
+.nav .nav-tabs .mb-3{
+    border-width: 2px !important;
+    border-style: double !important;
+    border-color: #80B435;
+}
+.nav-tabs .nav-link.active {
+    border-color: white !important;
+    border-bottom :3px #80B435 !important;
+    border-bottom-style: double !important;
+}
+.nav-link{
+    cursor: pointer;
+    border-color: white !important;
+}
+
+.email-input-div{
+    padding: 0px;
+}
+@media screen and (max-width: 800px) {
+    .app-download {
+        display: none;
+    }
+
+    /* .login-register {
+        width: 80%;
+        margin: 50px 0px 0px -30px;
+        height: fit-content;
+    } */
+}
+/* @media screen  and (max-width: 400px) {
+    .login-text {
+        margin: 20px 0px 0px 0px;
+        width: 100%;
+    }
+    .login{
+        width: 100%;
+    }
+
+    .nav-tabs{
+        justify-content: center !important ;
+        border-color: white !important;
+    }
+    .mb-3{
+        justify-content: center;
+    }
+} */
+
