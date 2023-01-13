@@ -37,7 +37,7 @@ const Poultry = () => {
 
   const goHome = () => {
     navigate("/home");
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   };
 
   let filterProduct;
@@ -49,7 +49,7 @@ const Poultry = () => {
     console.log("e", e);
     console.log("e.target.value", e.target.value);
     if (e.target.checked) {
-      console.log("checked",e.target.value,e.target.checked)
+      console.log("checked", e.target.value, e.target.checked);
       setPFilter((prevState) => [...prevState, e.target.value]);
       setSelection(true);
     } else {
@@ -58,8 +58,8 @@ const Poultry = () => {
           return item;
         }
       });
-      if(filterArray.length===0){
-        setSelection(false)
+      if (filterArray.length === 0) {
+        setSelection(false);
       }
       setPFilter(filterArray);
     }
@@ -74,13 +74,13 @@ const Poultry = () => {
 
   useEffect(() => {
     if (pFilter) {
-      for(let i=0;i<pFilter.length;i++){
-        filterProduct = allproducts.filter((product) => {
-          if(product.name.includes(pFilter[i]))
+      filterProduct = allproducts.filter((product) => {
+        for (let i = 0; i < pFilter.length; i++) {
+          if (product.name.includes(pFilter[i])) 
           return product;
-        })
-      }
-      setFilterProducts(filterProduct)
+        }
+      });
+      setFilterProducts(filterProduct);
     }
   }, [pFilter]);
   product && navigate("/product-details", { state: product });
@@ -416,9 +416,7 @@ const Poultry = () => {
                             />
                           </center>
                           <div style={{ padding: "10px", height: "220px" }}>
-                            <h6>
-                              {product.name}
-                            </h6>
+                            <h6>{product.name}</h6>
                             <p className="farm-text">{product.farm}</p>
                             <ReadMore style={{ height: "20%" }} length={40}>
                               {product.description}

@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import "../Styles/Categories.css";
 import { useNavigate } from "react-router-dom";
 
