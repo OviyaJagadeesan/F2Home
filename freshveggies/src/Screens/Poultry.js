@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./Header";
 import "../Styles/Poultry.css";
 import Footer from "./Footer";
@@ -13,16 +13,39 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { AiOutlineDown } from "react-icons/ai";
 
-const Poultry = () => {
+const Poultry = (props) => {
+  // console.log("Props",props.productType);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
   const [product, setProduct] = useState();
   const [addCartProduct, setAddCartProduct] = useState();
   const [show, setShow] = useState(false);
+  const [filterProducts, setFilterProducts] = useState();
+  const [selection, setSelection] = useState(false);
+  const [pFilter, setPFilter] = useState([]);
+  const [ehandler, setEHandler] = useState(false);
+  const [chandler, setCHandler] = useState(false);
+  
+  const productType = location.state;
+  const [prod,setProd]=useState(productType.productType);
 
   let dataGet = useSelector((payload) => payload);
   console.log("Payload", dataGet);
+
+  console.log("productType", productType.productType);
+
+  useEffect(()=>{
+    if(productType){
+    setPFilter([productType.productType]);
+    if(productType.productType==="Eggs"){
+      setEHandler(true);
+    }
+    else if(productType.productType==="Chicken"){
+      setCHandler(true);
+    }
+    }
+  },[]);
 
   const cartHandler = (e) => {
     if (setAddCartProduct(e) === addCartProduct) {
@@ -41,30 +64,28 @@ const Poultry = () => {
   };
 
   let filterProduct;
-  const [filterProducts, setFilterProducts] = useState();
-  const [selection, setSelection] = useState(false);
-  const [pFilter, setPFilter] = useState("");
 
   const FilterHandler = (e) => {
     console.log("e", e);
-    console.log("e.target.value", e.target.value);
     if (e.target.checked) {
-      console.log("checked", e.target.value, e.target.checked);
-      setPFilter((prevState) => [...prevState, e.target.value]);
+      console.log("checkedd", e.target.value, e.target.checked);
+      setProd("");
       setSelection(true);
     } else {
-      let filterArray = pFilter.filter((item) => {
-        if (item !== e.target.value) {
-          return item;
+      if(pFilter){
+        let filterArray = pFilter.filter((item) => {
+          if (item !== e.target.value) {
+            return item;
+          }
+        });
+        if (filterArray.length === 0) {
+          setSelection(false);
         }
-      });
-      if (filterArray.length === 0) {
-        setSelection(false);
+        setPFilter(filterArray);
       }
-      setPFilter(filterArray);
     }
   };
-  console.log("pFilter", pFilter);
+
   useEffect(() => {
     if (addCartProduct) {
       console.log("dispatched");
@@ -73,17 +94,18 @@ const Poultry = () => {
   }, [addCartProduct]);
 
   useEffect(() => {
-    if (pFilter) {
+    if (pFilter && allproducts) {
       filterProduct = allproducts.filter((product) => {
         for (let i = 0; i < pFilter.length; i++) {
-          if (product.name.includes(pFilter[i])) 
-          return product;
+          if (product.name.includes(pFilter[i])) return product;
         }
       });
       setFilterProducts(filterProduct);
     }
   }, [pFilter]);
   product && navigate("/product-details", { state: product });
+
+  console.log("PFF",pFilter);
 
   const [isReadMore, setIsReadMore] = useState(true);
   const toggleReadMore = () => {
@@ -231,6 +253,7 @@ const Poultry = () => {
                   type="checkbox"
                   value="Eggs"
                   onClick={FilterHandler}
+                  checked={ehandler}
                 />
               </div>
               <div
@@ -254,6 +277,7 @@ const Poultry = () => {
                   type="checkbox"
                   value="Chicken"
                   onClick={FilterHandler}
+                  checked={chandler}
                 />
               </div>
               <div
@@ -387,6 +411,7 @@ const Poultry = () => {
                                 : "grayBG"
                             }`}
                             onClick={() => cartHandler(product)}
+                            // onClick={()=>product.stack="Out of Stock"?cartHandler(product):null}
                           >
                             {product.stack}
                           </button>

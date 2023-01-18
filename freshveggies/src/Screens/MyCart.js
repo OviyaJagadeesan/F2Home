@@ -10,35 +10,46 @@ import Footer from "../Screens/Footer";
 import { useNavigate } from "react-router-dom";
 
 const MyCart = () => {
-  const navigate=useNavigate();
-  
-  const [deleteHandler,setDeleteHandler]=useState(false);
+  const navigate = useNavigate();
+
+  const [deleteHandler, setDeleteHandler] = useState(false);
 
   let value = useSelector((payload) => payload);
   const dispatch = useDispatch();
-  
-  const addItemHandler = (name, farm, weight, notkd, kd,stringKD) => {
-    dispatch(additem({ name, farm, weight, notkd,kd,stringKD }));
+
+  const addItemHandler = (name, farm, weight, notkd, kd, stringKD) => {
+    dispatch(additem({ name, farm, weight, notkd, kd, stringKD }));
   };
 
-  const removeItemHandler = (name, farm, weight, notkd, kd,stringKD) => {
-    dispatch(removeitem({ name, farm, weight, notkd, kd,stringKD }));
+  const removeItemHandler = (name, farm, weight, notkd, kd, stringKD) => {
+    dispatch(removeitem({ name, farm, weight, notkd, kd, stringKD }));
   };
 
-  const deleteItemHandler = (name, farm, weight, notkd, kd,stringKD) => {
-    dispatch(deleteitem({ name, farm, weight, notkd, kd,stringKD }));
+  const deleteItemHandler = (name, farm, weight, notkd, kd, stringKD) => {
+    dispatch(deleteitem({ name, farm, weight, notkd, kd, stringKD }));
     setDeleteHandler(true);
-    console.log("deletehandler",deleteHandler);
+    console.log("deletehandler", deleteHandler);
   };
 
-
-  const goHomeHandler=()=>{
+  const goHomeHandler = () => {
     navigate("/home");
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
+  };
+
+  let totalOldPrice = 0;
+  let totalNewPrice = 0;
+  let totalSavings = 10;
+  const length = value ? value.length : 0;
+  for (let i = 0; i < length; i++) {
+    if (value[i].oldRate)
+      totalOldPrice = totalOldPrice + value[i].notkd * value[i].quantity;
+    totalNewPrice = totalNewPrice + value[i].kd * value[i].quantity;
+    totalSavings = totalNewPrice - totalOldPrice;
+    console.log("TotalOldPrice",totalOldPrice);
+    console.log("TotalNewPrice",totalNewPrice);
   }
 
-
-  if (value.length>0) {
+  if (value.length > 0) {
     return (
       <div>
         <div>
@@ -46,7 +57,7 @@ const MyCart = () => {
         </div>
         <div className="cart-page-div">
           <div className="cart-header">
-          <nav aria-label="breadcrumb" style={{ marginTop: "20px" }}>
+            <nav aria-label="breadcrumb" style={{ marginTop: "20px" }}>
               <ol class="breadcrumb">
                 <li
                   class="breadcrumb-item"
@@ -64,7 +75,11 @@ const MyCart = () => {
                 </li>
               </ol>
             </nav>
-            <p style={{fontSize:"26px",fontWeight:"500",color:"#415162"}}>My Cart ({value.length})</p>
+            <p
+              style={{ fontSize: "26px", fontWeight: "500", color: "#415162" }}
+            >
+              My Cart ({value.length})
+            </p>
           </div>
 
           <div className="card page">
@@ -84,10 +99,16 @@ const MyCart = () => {
                   <div className="card details-div">
                     <div className="row cart-details">
                       <div className="col-lg-3 col-md-12 col-sm-12 name-farmname">
-                        <div className="col col-md-12 col-sm-12 item-name ">{item.name}</div>
-                        <div className="col col-md-12 col-sm-6 farm-name">{item.farm}</div>
+                        <div className="col col-md-12 col-sm-12 item-name ">
+                          {item.name}
+                        </div>
+                        <div className="col col-md-12 col-sm-6 farm-name">
+                          {item.farm}
+                        </div>
                       </div>
-                      <div className="col-lg-3 col-md-6 col-sm-6 weight-item">{item.weight}</div>
+                      <div className="col-lg-3 col-md-6 col-sm-6 weight-item">
+                        {item.weight}
+                      </div>
                       <div className="col-lg-2 col-md-6 col-sm-6 delete-add-remove">
                         <div
                           className="col delete-item-img"
@@ -139,13 +160,29 @@ const MyCart = () => {
                         </div>
                       </div>
                       <div className="col-lg-3 price-item">
-                        <div className="col item-notkd"><del>{(item.notkd*item.quantity).toFixed(3)}</del></div>
-                        <div className="col item-kd">{(item.kd*item.quantity).toFixed(3)}</div>
+                        <div className="col item-notkd">
+                          <del>{(item.notkd * item.quantity).toFixed(3)}</del>
+                        </div>
+                        <div className="col item-kd">
+                          {(item.kd * item.quantity).toFixed(3)}
+                        </div>
                       </div>
                     </div>
                   </div>
                 );
               })}
+            </div>
+            <div style={{display:"flex",flexDirection:"row"}}>
+              <div>
+                <p style={{color:"#415162",fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"594px",marginBottom:"20px"}}>Sub Total</p>
+              </div>
+              <div>
+                <div style={{color:"#415162",fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"217px",marginBottom:"20px"}}>
+                  {totalSavings > 0
+                    ? totalSavings.toFixed(3)
+                    : (totalSavings * -1).toFixed(3)}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -154,20 +191,21 @@ const MyCart = () => {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div>
+        <Header />
+        <div className="whole-empty-div">
+          <div className="empty-cart-img"></div>
+          <p className="empty-cart-text">Your Cart is Empty</p>
+          <button className="go-home-button" onClick={goHomeHandler}>
+            GO HOME
+          </button>
+        </div>
+        <Footer />
+      </div>
+    );
   }
-else{
-return (
-  <div>
-    <Header/>
-    <div className="whole-empty-div">
-      <div className="empty-cart-img"></div>
-      <p className="empty-cart-text">Your Cart is Empty</p>
-      <button className="go-home-button" onClick={goHomeHandler}>GO HOME</button>
-    </div>
-    <Footer/>
-  </div>
-);
-}
-}
+};
 
 export default MyCart;

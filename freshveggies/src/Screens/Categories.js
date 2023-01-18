@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/Categories.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Poultry from "./Poultry";
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -16,6 +17,18 @@ const Categories = () => {
   const allCategoriesHandler = () => {
     navigate("/allcategories");
   };
+
+  const [clicking, setIsClicking] = useState("");
+
+  const ProductFilterHandler = (e) => {
+    setIsClicking(e.target.id);
+    console.log("e.target.id",e.target.id)
+    console.log("eggs",e.target.id);
+    if (clicking) {
+      navigate("/poultry", { state: { productType: clicking } });
+    } 
+  };
+
   return (
     <div>
       <div className="categories-wrapper">
@@ -31,8 +44,16 @@ const Categories = () => {
           </div>
           <div className="products-div">
             <p className="head-margin-div">Poultry</p>
-            <p className="margin-div">Egg</p>
-            <p className="margin-div">Chicken</p>
+            <p className="margin-div" onClick={ProductFilterHandler} id="Eggs">
+              Eggs
+            </p>
+            <p
+              className="margin-div"
+              onClick={ProductFilterHandler}
+              id="Chicken"
+            >
+              Chicken
+            </p>
             <p className="margin-div">Turkey</p>
             <p className="view-all-div" onClick={allPoultryProductHandler}>
               View all
@@ -71,6 +92,7 @@ const Categories = () => {
           View All Categories
         </button>
       </div>
+      {/* {clicking && <Link to="/poultry" state={{productType:clicking}}></Link>} */}
     </div>
   );
 };
