@@ -11,9 +11,10 @@ const AllCategories = () => {
     navigate("/dairy");
   };
 
-  const PoultryHandler = () => {
-    navigate("/poultry");
+  const PoultryHandler = (e) => {
+    navigate("/poultry", { state: { productType: e.target.id } });
   };
+
   const seaFoodHandler = () => {
     navigate("/seafood");
   };

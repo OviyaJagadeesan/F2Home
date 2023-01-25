@@ -136,7 +136,9 @@
         margin-top: 7px;
         background: url("../Images/hamburger.png") 0% no-repeat;
         cursor: pointer;
-        z-index: 1;
+        /* display: flex; */
+        /* z-index: 1; */
+        /* position: absolute; */
     }
 
     .header{
@@ -176,11 +178,13 @@ body {
     background-color: gainsboro;
     margin-top: 55px;
     margin-left: -50px;
+    position: fixed;
 }
 
 .demo-card {
     margin: 20px;
     cursor: pointer;
+    font-family: Open-Sans;
 }
 
 .form-control {

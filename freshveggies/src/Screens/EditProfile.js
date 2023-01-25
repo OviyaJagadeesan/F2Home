@@ -19,7 +19,7 @@ import {AiOutlineArrowLeft} from "react-icons/ai";
 const EditProfile = () => {
   const navigate = useNavigate();
 
-  const[show,setShow]=useState(false);
+  const[show,setShow]=useState(true);
   const [personalDetails, setPersonalDetails] = useState(false);
   const [changepassword, setChangePassword] = useState(false);
   const [customersupport, setCustomerSupport] = useState(false);

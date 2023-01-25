@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "../Styles/Categories.css";
 import { Link, useNavigate } from "react-router-dom";
 import Poultry from "./Poultry";
+// import { FilterContext } from "./context";
 
 const Categories = () => {
+  // const {checkValue,updateValue}=useContext(FilterContext);
   const navigate = useNavigate();
 
   const dairyHandler = () => {
@@ -21,12 +23,13 @@ const Categories = () => {
   const [clicking, setIsClicking] = useState("");
 
   const ProductFilterHandler = (e) => {
+    // updateValue(e.target.id);
     setIsClicking(e.target.id);
-    console.log("e.target.id",e.target.id)
-    console.log("eggs",e.target.id);
-    if (clicking) {
-      navigate("/poultry", { state: { productType: clicking } });
-    } 
+    console.log("e.target.id", e.target.id);
+    console.log("eggs", e.target.id);
+    navigate("/poultry", { state: { productType: e.target.id } });
+    // 
+    // navigate("/poultry");
   };
 
   return (
@@ -55,7 +58,7 @@ const Categories = () => {
               Chicken
             </p>
             <p className="margin-div">Turkey</p>
-            <p className="view-all-div" onClick={allPoultryProductHandler}>
+            <p className="view-all-div" onClick={ProductFilterHandler}>
               View all
             </p>
           </div>

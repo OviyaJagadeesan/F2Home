@@ -6,8 +6,9 @@
     margin: 0px 20px 0px 20px;
 }
 
-.side-bar{
-    border: 1px solid;
+.sidebar{
+    /* border: 1px solid; */
+    /* width: 211px !important; */
 }
 
 .right-div{

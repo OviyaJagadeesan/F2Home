@@ -172,12 +172,12 @@ const MyCart = () => {
                 );
               })}
             </div>
-            <div style={{display:"flex",flexDirection:"row"}}>
-              <div>
-                <p style={{color:"#415162",fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"594px",marginBottom:"20px"}}>Sub Total</p>
+            <div className="row" style={{display:"flex",flexDirection:"row"}}>
+              <div className="col">
+                <p style={{fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"594px",width:"80px",marginBottom:"20px"}}>Sub Total</p>
               </div>
-              <div>
-                <div style={{color:"#415162",fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"217px",marginBottom:"20px"}}>
+              <div className="col">
+                <div style={{color:"415162",fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"188px",marginBottom:"20px"}}>
                   {totalSavings > 0
                     ? totalSavings.toFixed(3)
                     : (totalSavings * -1).toFixed(3)}

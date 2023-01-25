@@ -8,6 +8,7 @@ import ProductDetails from './Screens/ProductDetails';
 import MyCart from './Screens/MyCart';
 import AllCategories from './Screens/AllCategories';
 import AllFarms from './Screens/AllFarms';
+import { FilterContextProvider } from './Screens/context';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Profile/>}/>
         <Route path='/home' element={<Home/>}/>
-        <Route path='/poultry' element={<Poultry/>}/>
+        <Route path='/poultry' element={
+        <FilterContextProvider><Poultry/>
+        </FilterContextProvider>}/>
         <Route path='/editprofile' element={<EditProfile/>}/>
         <Route path='/product-details' element={<ProductDetails/>}/>
         <Route path="/mycart" element={<MyCart/>}/>

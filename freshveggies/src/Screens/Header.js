@@ -7,7 +7,7 @@ import Categories from "./Categories";
 import EditProfile from "./EditProfile";
 import ProfileChange from "./ProfileChange";
 import Badge from "react-bootstrap/Badge";
-
+import { FilterContextProvider } from "./context";
 
 const Header = () => {
   let cartlen = useSelector((payload) => payload);
@@ -21,26 +21,26 @@ const Header = () => {
   const navigate = useNavigate();
   const onclick = () => {
     navigate("/editprofile");
-    window.scroll(0,0);
+    window.scroll(0, 0);
   };
 
   const goHome = () => {
     navigate("/home");
-    window.scroll(0,0);
+    window.scroll(0, 0);
   };
 
   const goCart = () => {
     navigate("/mycart");
-    window.scroll(0,0);
+    window.scroll(0, 0);
   };
 
   const CategoriesHandler = () => {
     setCategory1(!category1);
   };
 
-  const farmsHandler=()=>{
+  const farmsHandler = () => {
     navigate("/allfarms");
-    window.scroll(0,0);
+    window.scroll(0, 0);
   };
 
   console.log("View", category1);
@@ -62,7 +62,7 @@ const Header = () => {
             {show && (
               <div className="demo">
                 <div className="demo-card">Search</div>
-                <div className="demo-card">Location</div>
+                <div className="demo-card">Trichy</div>
                 <div className="demo-card" onClick={onclick}>
                   Profile
                 </div>
@@ -77,7 +77,9 @@ const Header = () => {
             Shop By Category
             <RiArrowDropDownLine style={{ height: "30px", width: "30px" }} />
           </p>
-          <p className="col farms" onClick={farmsHandler}>Explore Farms</p>
+          <p className="col farms" onClick={farmsHandler}>
+            Explore Farms
+          </p>
           <div className="other-sec" style={{ width: "370px" }}>
             <div
               style={{
@@ -137,9 +139,10 @@ const Header = () => {
                     height: "20px",
                     marginTop: "auto",
                     marginBottom: "auto",
+                    marginLeft: "-7px",
                   }}
                 >
-                  Location
+                  Trichy
                 </p>
               </div>
               <div
@@ -160,7 +163,7 @@ const Header = () => {
                   }}
                   src={require("../Images/Profile.png")}
                 />
-                <div style={{cursor:"pointer"}}>
+                <div style={{ cursor: "pointer" }}>
                   <img
                     style={{
                       height: "20px",
@@ -183,7 +186,7 @@ const Header = () => {
                     </p>
                   </span>
                 </div>
-               {/* <img src={require("../Images/Notification.png")}>
+                {/* <img src={require("../Images/Notification.png")}>
         <Badge bg="secondary" style={{color:"black"}}>New</Badge>
       </img> */}
                 <img
@@ -193,20 +196,40 @@ const Header = () => {
                     marginTop: "auto",
                     marginBottom: "auto",
                     cursor: "pointer",
-                    marginLeft:"30px"
+                    marginLeft: "30px",
                   }}
                   src={require("../Images/Cart.png")}
                 />
-                {cartlen.length>=1 &&
-                <span class="badge rounded-pill badge-notification bg-success" style={{marginTop: "57px",marginLeft: "-39px",cursor:"pointer"}} >
-                  <p style={{fontSize:"10px",marginTop:"-3px",marginLeft:"-3px"}}>{cartlen.length}</p>
-                </span>}
+                {cartlen.length >= 1 && (
+                  <span
+                    class="badge rounded-pill badge-notification bg-success"
+                    style={{
+                      marginTop: "57px",
+                      marginLeft: "-39px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "10px",
+                        marginTop: "-3px",
+                        marginLeft: "-3px",
+                      }}
+                    >
+                      {cartlen.length}
+                    </p>
+                  </span>
+                )}
               </div>
             </div>
           </div>
         </div>
       </div>
-      {category1 && <Categories />}
+      {category1 && (
+        <FilterContextProvider>
+          <Categories />
+        </FilterContextProvider>
+      )}
     </div>
   );
 };
