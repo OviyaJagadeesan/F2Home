@@ -24,6 +24,7 @@ const EditProfile = () => {
   const [changepassword, setChangePassword] = useState(false);
   const [customersupport, setCustomerSupport] = useState(false);
   const [settings, setSettings] = useState(false);
+  // const [isShow, setIsShow] = useState(false);
 
   const clickedNavHandler=()=>{
     setShow(!show);
@@ -56,14 +57,17 @@ const EditProfile = () => {
 
   const logoutHandler = () => {
     navigate("/");
+    window.scrollTo(0,0);
   };
+
+  // const toggle = () => {
+  //   setIsShow(!isShow);
+  // }
   return (
     <div>
       <div className="edit-profile-div">
-        <div style={{height:"800px"}}>
-          <div>
-            <Header />
-          </div>
+        <Header/>
+        <div style={{height:"800px",marginTop:"28px"}}>
           <AiOutlineArrowLeft className="left-arrow" onClick={clickedNavHandler} ></AiOutlineArrowLeft>
           <div className="edit-profile-bottom-div">
             <div style={{display:show?"flex":"none"}} className="card left-div">

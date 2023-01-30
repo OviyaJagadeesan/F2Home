@@ -60,7 +60,7 @@ const ProductDetails = () => {
                   <img
                     src={grayBg}
                     style={{ width: "132px" }}
-                    className="grayBG"
+                    className="grayBGColor"
                   ></img>
                   <p
                     style={{

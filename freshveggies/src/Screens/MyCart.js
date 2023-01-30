@@ -45,16 +45,14 @@ const MyCart = () => {
       totalOldPrice = totalOldPrice + value[i].notkd * value[i].quantity;
     totalNewPrice = totalNewPrice + value[i].kd * value[i].quantity;
     totalSavings = totalNewPrice - totalOldPrice;
-    console.log("TotalOldPrice",totalOldPrice);
-    console.log("TotalNewPrice",totalNewPrice);
+    console.log("TotalOldPrice", totalOldPrice);
+    console.log("TotalNewPrice", totalNewPrice);
   }
 
   if (value.length > 0) {
     return (
       <div>
-        <div>
-          <Header />
-        </div>
+        <Header />
         <div className="cart-page-div">
           <div className="cart-header">
             <nav aria-label="breadcrumb" style={{ marginTop: "20px" }}>
@@ -172,12 +170,12 @@ const MyCart = () => {
                 );
               })}
             </div>
-            <div className="row" style={{display:"flex",flexDirection:"row"}}>
-              <div className="col">
-                <p style={{fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"594px",width:"80px",marginBottom:"20px"}}>Sub Total</p>
-              </div>
-              <div className="col">
-                <div style={{color:"415162",fontFamily:"Open-Sans",fontWeight:500,fontSize:"18px",marginTop:"20px",marginLeft:"188px",marginBottom:"20px"}}>
+            <div className="card total-div">
+              <div className="row cart-body2">
+                <div className="col-lg-3 item-details-header4"></div>
+                <div className="col-lg-3 item-details-header4"></div>
+                <div className="col-lg-3 item-details-header2">Sub Total</div>
+                <div className="col-lg-3 item-details-header3">
                   {totalSavings > 0
                     ? totalSavings.toFixed(3)
                     : (totalSavings * -1).toFixed(3)}
@@ -186,9 +184,7 @@ const MyCart = () => {
             </div>
           </div>
         </div>
-        <div>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     );
   } else {
@@ -196,13 +192,14 @@ const MyCart = () => {
       <div>
         <Header />
         <div className="whole-empty-div">
-          <div className="empty-cart-img"></div>
-          <p className="empty-cart-text">Your Cart is Empty</p>
-          <button className="go-home-button" onClick={goHomeHandler}>
-            GO HOME
-          </button>
-        </div>
-        <Footer />
+           {/* <div className="empty-cart-img"></div> */}
+           <img src={require("../Images/Empty-Cart.png")} className="img-return"/>
+           <p className="empty-cart-text">Your Cart is Empty</p>
+           <button className="go-home-button" onClick={goHomeHandler}>
+             GO HOME
+           </button>
+         </div>
+         <Footer />
       </div>
     );
   }

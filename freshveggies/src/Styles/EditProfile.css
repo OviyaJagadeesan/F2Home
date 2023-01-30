@@ -23,6 +23,9 @@
     align-items: center;
     border-left: none !important;
     border-radius: 0px !important;
+    border-bottom-color: white !important;
+    border-top-color: white !important;
+    box-shadow: 0px 2px 6px;
 }
 
 .edit-profile-details{
@@ -120,11 +123,6 @@
     margin-left: 30px;
 }
 
-@media only screen and (max-width:1300px){
-    .edit-profile-div{
-        font-size: 20px;
-    }
-    .personal-details{
-        font-size: 20px;
-    }
+@media only screen and (min-width:1000px){
+    
 }

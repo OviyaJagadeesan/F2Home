@@ -9,33 +9,42 @@ const AllCategories = () => {
 
   const dairyHandler = () => {
     navigate("/dairy");
+    window.scrollTo(0,0);
   };
 
   const PoultryHandler = (e) => {
     navigate("/poultry", { state: { productType: e.target.id } });
+    window.scrollTo(0,0);
   };
 
   const seaFoodHandler = () => {
     navigate("/seafood");
+    window.scrollTo(0,0);
   };
   const vegetablesHandler = () => {
     navigate("/dairy");
+    window.scrollTo(0,0);
   };
   const freshFruitsHandler = () => {
     navigate("/dairy");
+    window.scrollTo(0,0);
   };
   const flowersHandler = () => {
     navigate("/dairy");
+    window.scrollTo(0,0);
   };
   const herbsHandler = () => {
     navigate("/dairy");
+    window.scrollTo(0,0);
   };
   const seasoningHandler = () => {
     navigate("/dairy");
+    window.scrollTo(0,0);
   };
 
   const goHome = () => {
     navigate("/home");
+    window.scrollTo(0,0);
   };
 
   return (

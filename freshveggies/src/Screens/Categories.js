@@ -10,14 +10,17 @@ const Categories = () => {
 
   const dairyHandler = () => {
     navigate("/dairy");
+    window.scrollTo(0,0);
   };
 
   const allPoultryProductHandler = () => {
     navigate("/poultry");
+    window.scrollTo(0,0);
   };
 
   const allCategoriesHandler = () => {
     navigate("/allcategories");
+    window.scrollTo(0,0);
   };
 
   const [clicking, setIsClicking] = useState("");
@@ -28,6 +31,7 @@ const Categories = () => {
     console.log("e.target.id", e.target.id);
     console.log("eggs", e.target.id);
     navigate("/poultry", { state: { productType: e.target.id } });
+    window.scrollTo(0,0);
     // 
     // navigate("/poultry");
   };

@@ -8,10 +8,10 @@ import {
   MDBTabsPane,
 } from "mdb-react-ui-kit";
 import { SlEnvolope } from "react-icons/sl";
-import {AiOutlineLock} from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import {AiOutlineLock} from "react-icons/ai";
 
 function Profile() {
   const navigate = useNavigate();
@@ -78,12 +78,13 @@ function Profile() {
           <div className="app-download"></div>
           <div className="col login-register">
             <MDBTabs className="mb-3">
+              
               <MDBTabsItem>
                 <MDBTabsLink
                   onClick={() => handleBasicClick("tab1")}
                   active={basicActive === "tab1"}
                 >
-                  LOGIN
+                  REGISTER
                 </MDBTabsLink>
               </MDBTabsItem>
               <MDBTabsItem>
@@ -91,19 +92,36 @@ function Profile() {
                   onClick={() => handleBasicClick("tab2")}
                   active={basicActive === "tab2"}
                 >
-                  REGISTER
+                  LOGIN
                 </MDBTabsLink>
               </MDBTabsItem>
             </MDBTabs>
             <MDBTabsContent>
-              <MDBTabsPane show={basicActive === "tab1"}>
+            <MDBTabsPane show={basicActive === "tab1"}>
+                <div className="register-text">
+                  Create your Farm2Home account using your email id.
+                </div>
+                <div className="email-div">
+                  <SlEnvolope className="envolope"/>
+                  <input
+                    type="email"
+                    className="email-input"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailInputPassword1"
+                    placeholder="Your email ID"
+                  ></input>
+                </div>
+                <p className="send-code">We will send a code to validate.</p>
+                <div className="proceed-btn">PROCEED</div>
+              </MDBTabsPane>
+              <MDBTabsPane show={basicActive === "tab2"}>
                 <div className="login">
                   <div className="login-text">
                     Please enter your registered email and password to login to
                     your account.
                   </div>
                   <div className="email-div">
-                    <SlEnvolope className="envolope"/>
+                    <SlEnvolope  className="envolope"/>
                     <input
                       type="email"
                       className="email-input"
@@ -143,23 +161,7 @@ function Profile() {
                   </div>
                 </div>
               </MDBTabsPane>
-              <MDBTabsPane show={basicActive === "tab2"}>
-                <div className="register-text">
-                  Create your Farm2Home account using your email id.
-                </div>
-                <div className="email-div">
-                  <SlEnvolope className="envolope"/>
-                  <input
-                    type="email"
-                    className="email-input"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailInputPassword1"
-                    placeholder="Your email ID"
-                  ></input>
-                </div>
-                <p className="send-code">We will send a code to validate.</p>
-                <div className="proceed-btn">PROCEED</div>
-              </MDBTabsPane>
+              
             </MDBTabsContent>
           </div>
         </div>

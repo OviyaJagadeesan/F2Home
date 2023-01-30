@@ -1,0 +1,7 @@
+.right-divv{
+    margin: -730px 0px 0px 270px !important;
+    /* width: 80%; */
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+}

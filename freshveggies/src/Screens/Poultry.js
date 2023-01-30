@@ -12,6 +12,7 @@ import ReadMore from "../Screens/ReadMore";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { AiOutlineDown } from "react-icons/ai";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Poultry = () => {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ const Poultry = () => {
   const cartHandler = (e) => {
     if (setAddCartProduct(e) === addCartProduct) {
       setAddCartProduct(e);
+      showToastMessage();
     }
   };
 
@@ -131,6 +133,13 @@ const Poultry = () => {
     console.log("E", ehandler, chandler);
   }, [ehandler, chandler]);
 
+  const showToastMessage = () => {
+    toast.success('Item added in cart!', {
+        position: toast.POSITION.TOP_CENTER
+    });
+    console.log("Toast");
+};
+
   return (
     <div style={{ overflow: "hidden" }}>
       <Header />
@@ -226,18 +235,23 @@ const Poultry = () => {
                   paddingRight: "20px",
                   marginLeft: "-10px",
                   display: "flex",
-                  width: "216px",
                   flexDirection: "row",
                   justifyContent: "space-between",
+                  // backgroundColor: "#F7F7F7",
+                  width: "111%",
+                  marginTop: "20px",
+                  height: "50px",
                 }}
               >
-                <p style={{ marginTop: "20px" }}>Eggs</p>
+                <p style={{ 
+                  marginBottom: "auto" }}>
+                  Eggs
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    marginTop: "20px",
                   }}
                   type="checkbox"
                   value="Eggs"
@@ -260,11 +274,15 @@ const Poultry = () => {
                   marginLeft: "-10px",
                   display: "flex",
                   flexDirection: "row",
-                  width: "216px",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Chicken</p>
+                <p style={{ 
+                  marginBottom: "auto" }}>
+                  Chicken
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
@@ -292,11 +310,15 @@ const Poultry = () => {
                   marginLeft: "-10px",
                   display: "flex",
                   flexDirection: "row",
-                  width: "216px",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Turkey</p>
+                <p style={{ 
+                  marginBottom: "auto" }}>
+                  Turkey
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
@@ -314,11 +336,15 @@ const Poultry = () => {
                   marginLeft: "-10px",
                   display: "flex",
                   flexDirection: "row",
-                  width: "216px",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Duck</p>
+                <p style={{ 
+                  marginBottom: "auto" }}>
+                  Duck
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
@@ -326,7 +352,7 @@ const Poultry = () => {
                     width: "20px",
                   }}
                   type="checkbox"
-                  value="Duck"
+                  value="Turkey"
                 />
               </div>
             </div>
@@ -416,7 +442,7 @@ const Poultry = () => {
                                 ? "greenBG"
                                 : "grayBG"
                             }`}
-                            onClick={() => product.stack === "Add to Cart" ?  cartHandler(product) : null}
+                            onClick={() => product.stack === "Add to Cart" ?  cartHandler(product) && showToastMessage() : null}
                           >
                             {product.stack}
                           </button>

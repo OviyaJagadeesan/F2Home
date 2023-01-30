@@ -66,7 +66,7 @@ const Home = () => {
     if(e.id==1){
       navigate("/dairy");
     }else if(e.id==2){
-      navigate("/poultry");
+      navigate("/poultry", { state: { productType: e.target.id } });
       window.scrollTo(0,0);
     }
   };
@@ -86,8 +86,14 @@ const Home = () => {
     window.scrollTo(0,0);
   };
 
+  const poultryHandlerProduct=(e)=>{
+      navigate("/poultry", { state: { productType: e.target.id } });
+      window.scrollTo(0,0);
+
+  }
+
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <div style={{ backgroundColor: "white",overflow:"hidden" }}>
       <Header />
       <div className="fluid">
         <div className="veg-products-div">
@@ -95,7 +101,7 @@ const Home = () => {
             className="img-fluid"
             src={require("../Images/FruitsVeg.png")}
             alt="vegFrame"
-            style={{ width: "100%" }}
+            style={{ width: "100%",cursor:"pointer" }}
             onClick={allFarmsHandler}
           ></img>
         </div>
@@ -128,6 +134,7 @@ const Home = () => {
               marginBottom: "auto",
               fontFamily: "Open-Sans",
               color: "red",
+              cursor:"pointer"
             }}
           >
             View All
@@ -204,6 +211,7 @@ const Home = () => {
               marginBottom: "auto",
               fontFamily: "Open-Sans",
               color: "red",
+              cursor:"pointer"
             }}
           >
             View All
@@ -214,16 +222,14 @@ const Home = () => {
             {categories &&
               categories.map((item) => {
                 console.log("images", item.image);
-                // let img = require(`../../src/Images/${item.image}`)
                 return (
                   <div style={{ cursor: "pointer" }} onClick={()=>productDetailsHandler(item)}>
                     <img
                       src={require(`../Images/${item.image}`)}
                       className="col-md-10 col-sm-10 img-fluid"
-                      // src={ require(`../../src/Images/${item.image}`) }
                       style={{ margin: "20px" }}
                     />
-                    <div className="promo-texts" value={item.id}>{item.productname}</div>
+                    <div className="promo-texts" value={item.id} onClick={item.productname==="Poultry"?poultryHandlerProduct:null}>{item.productname}</div>
                   </div>
                 );
               })}
@@ -258,6 +264,7 @@ const Home = () => {
               marginBottom: "auto",
               fontFamily: "Open-Sans",
               color: "red",
+              cursor:"pointer"
             }}
           >
             View All

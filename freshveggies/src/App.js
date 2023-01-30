@@ -9,6 +9,7 @@ import MyCart from './Screens/MyCart';
 import AllCategories from './Screens/AllCategories';
 import AllFarms from './Screens/AllFarms';
 import { FilterContextProvider } from './Screens/context';
+import Reg from "./Screens/Reg";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<Profile/>}/>
+        <Route path='/reg' element={<Reg/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/poultry' element={
         <FilterContextProvider><Poultry/>

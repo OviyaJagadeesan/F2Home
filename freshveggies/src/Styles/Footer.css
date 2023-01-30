@@ -45,6 +45,7 @@
 }
 .text-login{
     padding: 10px;
+    cursor: pointer;
 }
 .app-download-img{
     display: flex;
@@ -66,7 +67,10 @@
 
 
 @media only screen and (min-width:280px) and (max-width:560px){
-    .footer-div{
-        width: 100%;
+    .app-logo-div,
+    .app-logo-div1,
+    .app-logo-div2,
+    .app-logo-div3{
+        
     }
 }
