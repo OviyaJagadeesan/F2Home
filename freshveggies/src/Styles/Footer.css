@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: auto !important;
+}
 .footer-div{
     display: flex;
     flex-direction: row;

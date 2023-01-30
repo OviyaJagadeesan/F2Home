@@ -20,18 +20,27 @@ const Header = () => {
 
   const navigate = useNavigate();
   const onclick = () => {
-    navigate("/editprofile");
-    window.scroll(0, 0);
+    navigate("/editprofile"); 
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const goHome = () => {
     navigate("/home");
-    window.scroll(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const goCart = () => {
     navigate("/mycart");
-    window.scroll(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const CategoriesHandler = () => {
@@ -39,11 +48,21 @@ const Header = () => {
   };
 
   const farmsHandler = () => {
-    navigate("/allfarms");
-    window.scroll(0, 0);
+    navigate("/allfarms"); 
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   console.log("View", category1);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
 
   return (
     <div>
@@ -102,16 +121,16 @@ const Header = () => {
                 <img
                   style={{
                     height: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                   }}
                   src={require("../Images/Search.png")}
                 />
                 <p
                   style={{
                     height: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                   }}
                 >
                   Search
@@ -129,16 +148,16 @@ const Header = () => {
                 <img
                   style={{
                     height: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                   }}
                   src={require("../Images/Location.png")}
                 />
                 <p
                   style={{
                     height: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                     marginLeft: "-7px",
                   }}
                 >
@@ -156,8 +175,8 @@ const Header = () => {
                   onClick={onclick}
                   style={{
                     height: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                     cursor: "pointer",
                     marginLeft: "40px",
                   }}
@@ -168,7 +187,7 @@ const Header = () => {
                     style={{
                       height: "20px",
                       marginTop: "30px",
-                      marginBottom: "auto",
+                      marginBottom: 'auto',
                       marginLeft: "20px",
                       cursor: "pointer",
                     }}
@@ -193,8 +212,8 @@ const Header = () => {
                   onClick={goCart}
                   style={{
                     height: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                     cursor: "pointer",
                     marginLeft: "30px",
                   }}

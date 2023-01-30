@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import "../Styles/Categories.css";
 import { Link, useNavigate } from "react-router-dom";
 import Poultry from "./Poultry";
@@ -10,17 +10,26 @@ const Categories = () => {
 
   const dairyHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const allPoultryProductHandler = () => {
     navigate("/poultry");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const allCategoriesHandler = () => {
     navigate("/allcategories");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const [clicking, setIsClicking] = useState("");
@@ -35,6 +44,10 @@ const Categories = () => {
     // 
     // navigate("/poultry");
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
     <div>

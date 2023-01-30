@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: auto !important;
+}
 .right-divv{
     margin: -730px 0px 0px 270px !important;
     /* width: 80%; */

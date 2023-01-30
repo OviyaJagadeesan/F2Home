@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../Styles/AllCategories.css";
 import Header from "../Screens/Header";
 import Footer from "../Screens/Footer";
@@ -9,43 +9,77 @@ const AllCategories = () => {
 
   const dairyHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const PoultryHandler = (e) => {
     navigate("/poultry", { state: { productType: e.target.id } });
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const seaFoodHandler = () => {
     navigate("/seafood");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
   const vegetablesHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
   const freshFruitsHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
   const flowersHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
   const herbsHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
   const seasoningHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const goHome = () => {
     navigate("/home");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, [])
 
   return (
     <div>

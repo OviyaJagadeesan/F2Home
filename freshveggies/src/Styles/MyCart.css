@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: auto !important;
+}
 .cart-header{
     margin-top: 110px;
     margin-left: 30px;

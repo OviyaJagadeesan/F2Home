@@ -174,8 +174,8 @@ const ProductDetails = () => {
               <div className="col farm-names">{Farms[0].farmname}</div>
             </div>
             <div className="description-farm">{Farms[0].description}</div>
-            <center>
-              <div>
+            {/* <center> */}
+              <div className="center">
                 <img
                   className="col"
                   style={{ margin: "20px" }}
@@ -197,7 +197,7 @@ const ProductDetails = () => {
                   src={require(`../Images/${Farms[0].image4}`)}
                 ></img>
               </div>
-            </center>
+            {/* </center> */}
             <div className="row previous-continue">
               <div className="col-md-2 previous-page">
                 {Farms[0].previouspage}

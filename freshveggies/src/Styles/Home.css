@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: auto !important;
+}
 .lguFiu {
     width: 98% !important;
 }
@@ -67,4 +70,7 @@
 .image-farm{
     margin-top: 20px;
     display: flex;
+}
+.fluid{
+    overflow-y: auto;
 }

@@ -169,15 +169,15 @@ const Poultry = () => {
                   height: "50px",
                 }}
               >
-                <p style={{ marginTop: "auto", marginBottom: "auto" }}>
+                <p style={{ marginTop: 'auto', marginBottom: 'auto' }}>
                   Category
                 </p>
                 <img
                   style={{
                     height: "20px",
                     width: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                   }}
                   src={require("../Images/Menu.png")}
                   alt="DownArrow"
@@ -215,15 +215,15 @@ const Poultry = () => {
                   marginTop: "20px",
                 }}
               >
-                <p style={{ marginTop: "auto", marginbottom: "auto" }}>
+                <p style={{ marginTop: 'auto', marginbottom: 'auto' }}>
                   Sub-Category
                 </p>
                 <img
                   style={{
                     height: "20px",
                     width: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                   }}
                   src={require("../Images/Filter.png")}
                   alt="filter-img"
@@ -244,7 +244,7 @@ const Poultry = () => {
                 }}
               >
                 <p style={{ 
-                  marginBottom: "auto" }}>
+                  marginBottom: 'auto' }}>
                   Eggs
                 </p>
                 <input
@@ -280,7 +280,7 @@ const Poultry = () => {
                 }}
               >
                 <p style={{ 
-                  marginBottom: "auto" }}>
+                  marginBottom: 'auto' }}>
                   Chicken
                 </p>
                 <input
@@ -316,7 +316,7 @@ const Poultry = () => {
                 }}
               >
                 <p style={{ 
-                  marginBottom: "auto" }}>
+                  marginBottom: 'auto' }}>
                   Turkey
                 </p>
                 <input
@@ -342,7 +342,7 @@ const Poultry = () => {
                 }}
               >
                 <p style={{ 
-                  marginBottom: "auto" }}>
+                  marginBottom: 'auto' }}>
                   Duck
                 </p>
                 <input

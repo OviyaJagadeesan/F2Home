@@ -67,30 +67,53 @@ const Home = () => {
       navigate("/dairy");
     }else if(e.id==2){
       navigate("/poultry", { state: { productType: e.target.id } });
-      window.scrollTo(0,0);
+      window.scrollTo({
+        top: 0,
+        behavior: 'auto',
+      });
     }
   };
 
   const DairyHandler = () => {
     navigate("/dairy");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const allCategoriesHandler = () => {
     navigate("/allcategories");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const allFarmsHandler=()=>{
-    navigate("/allfarms");
-    window.scrollTo(0,0);
+    navigate("/allfarms"); 
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   const poultryHandlerProduct=(e)=>{
-      navigate("/poultry", { state: { productType: e.target.id } });
-      window.scrollTo(0,0);
+      navigate("/poultry", { state: { productType: e.target.id } }); 
+      window.scrollTo({
+        top: 0,
+        behavior: 'auto',
+      });
 
   }
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
 
   return (
     <div style={{ backgroundColor: "white",overflow:"hidden" }}>
@@ -120,7 +143,7 @@ const Home = () => {
           <p
             style={{
               fontSize: "26px",
-              margin: "auto",
+              margin: 'auto',
               fontFamily: "Open-Sans",
             }}
           >
@@ -131,7 +154,7 @@ const Home = () => {
               fontSize: "16px",
               marginLeft: "10px",
               marginTop: "10px",
-              marginBottom: "auto",
+              marginBottom: 'auto',
               fontFamily: "Open-Sans",
               color: "red",
               cursor:"pointer"
@@ -197,7 +220,7 @@ const Home = () => {
           <p
             style={{
               fontSize: "26px",
-              margin: "auto",
+              margin: 'auto',
               fontFamily: "Open-Sans",
             }}
           >
@@ -208,7 +231,7 @@ const Home = () => {
               fontSize: "16px",
               marginLeft: "10px",
               marginTop: "10px",
-              marginBottom: "auto",
+              marginBottom: 'auto',
               fontFamily: "Open-Sans",
               color: "red",
               cursor:"pointer"
@@ -250,7 +273,7 @@ const Home = () => {
           <p
             style={{
               fontSize: "26px",
-              margin: "auto",
+              margin: 'auto',
               fontFamily: "Open-Sans",
             }}
           >
@@ -261,7 +284,7 @@ const Home = () => {
               fontSize: "16px",
               marginLeft: "10px",
               marginTop: "10px",
-              marginBottom: "auto",
+              marginBottom: 'auto',
               fontFamily: "Open-Sans",
               color: "red",
               cursor:"pointer"
@@ -278,7 +301,7 @@ const Home = () => {
                 <div
                   style={{
                     textAlign: "center",
-                    padding: "auto",
+                    padding: 'auto',
                     cursor: "pointer",
                   }}
                 >
@@ -286,7 +309,7 @@ const Home = () => {
                     src={require(`../Images/${farmsDetails.farmimage}`)}
                     className="col-md-6 col-sm-10 img-fluid "
                     style={{
-                      margin: "auto",
+                      margin: 'auto',
                       display: "flex",
                       width: "150px",
                       paddingTop: "20px",

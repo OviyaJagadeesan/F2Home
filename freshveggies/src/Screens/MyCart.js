@@ -31,9 +31,19 @@ const MyCart = () => {
     console.log("deletehandler", deleteHandler);
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
   const goHomeHandler = () => {
     navigate("/home");
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   let totalOldPrice = 0;

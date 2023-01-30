@@ -10,11 +10,21 @@ const AllFarms = () => {
 
   const goHome = () => {
     navigate("/home");
-    window.scrollTo(0,0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
   return (
-    <div style={{overflow:"hidden"}}>
+    <div style={{ overflow: "hidden" }}>
       <Header />
       <div className="fluid">
         <img src={require("../Images/FarmsLogo.png")} className="img-fluid" />
@@ -42,15 +52,15 @@ const AllFarms = () => {
                   height: "50px",
                 }}
               >
-                <p style={{ marginTop: "auto", marginBottom: "auto" }}>
+                <p style={{ marginTop: 'auto', marginBottom: 'auto' }}>
                   Category
                 </p>
                 <img
                   style={{
                     height: "20px",
                     width: "20px",
-                    marginTop: "auto",
-                    marginBottom: "auto",
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
                   }}
                   src={require("../Images/Filter.png")}
                   alt="DownArrow"
@@ -75,7 +85,7 @@ const AllFarms = () => {
                     height: "20px",
                     width: "20px",
                     marginTop: "20px",
-                    cursor:"pointer"
+                    cursor: "pointer",
                   }}
                   type="checkbox"
                   value="Dairy"
@@ -98,7 +108,7 @@ const AllFarms = () => {
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor:"pointer"
+                    cursor: "pointer",
                   }}
                   type="checkbox"
                   value="Poultry"
@@ -121,7 +131,7 @@ const AllFarms = () => {
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor:"pointer"
+                    cursor: "pointer",
                   }}
                   type="checkbox"
                   value="Seafood"
@@ -144,7 +154,7 @@ const AllFarms = () => {
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor:"pointer"
+                    cursor: "pointer",
                   }}
                   type="checkbox"
                   value="Vegetables"
@@ -167,7 +177,7 @@ const AllFarms = () => {
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor:"pointer"
+                    cursor: "pointer",
                   }}
                   type="checkbox"
                   value="Freshfruits"
@@ -190,7 +200,7 @@ const AllFarms = () => {
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor:"pointer"
+                    cursor: "pointer",
                   }}
                   type="checkbox"
                   value="Flowers"
@@ -272,8 +282,8 @@ const AllFarms = () => {
             </div>
           </div>
         </div>
-        </div>
-        <Footer />
+      </div>
+      <Footer />
     </div>
   );
 };
