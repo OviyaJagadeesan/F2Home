@@ -12,7 +12,8 @@ import ReadMore from "../Screens/ReadMore";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { AiOutlineDown } from "react-icons/ai";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Poultry = () => {
   const navigate = useNavigate();
@@ -25,9 +26,18 @@ const Poultry = () => {
   let dataGet = useSelector((payload) => payload);
 
   const cartHandler = (e) => {
+    console.log("ADDED");
+    toast.success("Item added in cart!", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true, 
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     if (setAddCartProduct(e) === addCartProduct) {
       setAddCartProduct(e);
-      showToastMessage();
     }
   };
 
@@ -133,12 +143,11 @@ const Poultry = () => {
     console.log("E", ehandler, chandler);
   }, [ehandler, chandler]);
 
-  const showToastMessage = () => {
-    toast.success('Item added in cart!', {
-        position: toast.POSITION.TOP_CENTER
-    });
-    console.log("Toast");
-};
+  // const showToastMessage = () => {
+  //   console.log("ADD");
+    
+  //   console.log("Toast");
+  // };
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -169,15 +178,15 @@ const Poultry = () => {
                   height: "50px",
                 }}
               >
-                <p style={{ marginTop: 'auto', marginBottom: 'auto' }}>
+                <p style={{ marginTop: "auto", marginBottom: "auto" }}>
                   Category
                 </p>
                 <img
                   style={{
                     height: "20px",
                     width: "20px",
-                    marginTop: 'auto',
-                    marginBottom: 'auto',
+                    marginTop: "auto",
+                    marginBottom: "auto",
                   }}
                   src={require("../Images/Menu.png")}
                   alt="DownArrow"
@@ -195,11 +204,11 @@ const Poultry = () => {
                 }}
               >
                 <p style={{ marginTop: "20px" }}>Poultry</p>
-                <AiOutlineDown
+                {/* <AiOutlineDown
                   style={{ height: "10px", width: "20px", marginTop: "30px" }}
                   src={require("../Images/DownArrow.png")}
                   alt="DownArrow"
-                />
+                /> */}
               </div>
               <div
                 style={{
@@ -215,15 +224,15 @@ const Poultry = () => {
                   marginTop: "20px",
                 }}
               >
-                <p style={{ marginTop: 'auto', marginbottom: 'auto' }}>
+                <p style={{ marginTop: "auto", marginbottom: "auto" }}>
                   Sub-Category
                 </p>
                 <img
                   style={{
                     height: "20px",
                     width: "20px",
-                    marginTop: 'auto',
-                    marginBottom: 'auto',
+                    marginTop: "auto",
+                    marginBottom: "auto",
                   }}
                   src={require("../Images/Filter.png")}
                   alt="filter-img"
@@ -243,8 +252,11 @@ const Poultry = () => {
                   height: "50px",
                 }}
               >
-                <p style={{ 
-                  marginBottom: 'auto' }}>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
                   Eggs
                 </p>
                 <input
@@ -279,8 +291,11 @@ const Poultry = () => {
                   height: "50px",
                 }}
               >
-                <p style={{ 
-                  marginBottom: 'auto' }}>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
                   Chicken
                 </p>
                 <input
@@ -315,8 +330,11 @@ const Poultry = () => {
                   height: "50px",
                 }}
               >
-                <p style={{ 
-                  marginBottom: 'auto' }}>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
                   Turkey
                 </p>
                 <input
@@ -341,8 +359,11 @@ const Poultry = () => {
                   height: "50px",
                 }}
               >
-                <p style={{ 
-                  marginBottom: 'auto' }}>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
                   Duck
                 </p>
                 <input
@@ -442,7 +463,11 @@ const Poultry = () => {
                                 ? "greenBG"
                                 : "grayBG"
                             }`}
-                            onClick={() => product.stack === "Add to Cart" ?  cartHandler(product) && showToastMessage() : null}
+                            onClick={() =>
+                              product.stack === "Add to Cart"
+                                ? cartHandler(product) 
+                                : null
+                            }
                           >
                             {product.stack}
                           </button>
@@ -519,7 +544,11 @@ const Poultry = () => {
                                 ? "greenBG"
                                 : "grayBG"
                             }`}
-                            onClick={() => product.stack === "Add to Cart" ?  cartHandler(product) : null}
+                            onClick={() =>
+                              product.stack === "Add to Cart"
+                                ? cartHandler(product) 
+                                : null
+                            }
                           >
                             {product.stack}
                           </button>
@@ -549,7 +578,8 @@ const Poultry = () => {
           />
         </div>
       </div>
-      <Footer />
+      <Footer/>
+      <ToastContainer/>
     </div>
   );
 };

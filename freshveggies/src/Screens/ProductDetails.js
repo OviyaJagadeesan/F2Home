@@ -175,7 +175,7 @@ const ProductDetails = () => {
             </div>
             <div className="description-farm">{Farms[0].description}</div>
             {/* <center> */}
-              <div className="center">
+              <div className="cente r">
                 <img
                   className="col"
                   style={{ margin: "20px" }}

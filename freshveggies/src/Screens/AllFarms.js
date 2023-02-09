@@ -47,48 +47,54 @@ const AllFarms = () => {
                   flexDirection: "row",
                   justifyContent: "space-between",
                   backgroundColor: "#F7F7F7",
-                  width: "210px",
+                  width: "111%",
                   marginTop: "20px",
                   height: "50px",
                 }}
               >
-                <p style={{ marginTop: 'auto', marginBottom: 'auto' }}>
+                <p style={{ marginTop: "auto", marginBottom: "auto" }}>
                   Category
                 </p>
                 <img
                   style={{
                     height: "20px",
                     width: "20px",
-                    marginTop: 'auto',
-                    marginBottom: 'auto',
+                    marginTop: "auto",
+                    marginBottom: "auto",
                   }}
-                  src={require("../Images/Filter.png")}
+                  src={require("../Images/Menu.png")}
                   alt="DownArrow"
                 />
-              </div>
-
+              </div>             
               <div
                 style={{
                   paddingLeft: "20px",
                   paddingRight: "20px",
                   marginLeft: "-10px",
-                  width: "216px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
+                  // backgroundColor: "#F7F7F7",
+                  width: "111%",
+                  marginTop: "20px",
+                  height: "50px",
                 }}
               >
-                <p style={{ marginTop: "20px" }}>Dairy</p>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
+                  Dairy
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    marginTop: "20px",
-                    cursor: "pointer",
                   }}
                   type="checkbox"
-                  value="Dairy"
+                  value="Eggs"
                 />
               </div>
               <div
@@ -96,22 +102,28 @@ const AllFarms = () => {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                   marginLeft: "-10px",
-                  width: "216px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Poultry</p>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
+                  Poultry
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor: "pointer",
                   }}
                   type="checkbox"
-                  value="Poultry"
+                  value="Chicken"
                 />
               </div>
               <div
@@ -119,22 +131,28 @@ const AllFarms = () => {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                   marginLeft: "-10px",
-                  width: "216px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Sea Food</p>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
+                  Sea Food
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor: "pointer",
                   }}
                   type="checkbox"
-                  value="Seafood"
+                  value="Turkey"
                 />
               </div>
               <div
@@ -142,22 +160,28 @@ const AllFarms = () => {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                   marginLeft: "-10px",
-                  width: "216px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Vegetables</p>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
+                  Vegetables
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor: "pointer",
                   }}
                   type="checkbox"
-                  value="Vegetables"
+                  value="Turkey"
                 />
               </div>
               <div
@@ -165,22 +189,28 @@ const AllFarms = () => {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                   marginLeft: "-10px",
-                  width: "216px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Fresh Fruits</p>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
+                  Fresh Fruits
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor: "pointer",
                   }}
                   type="checkbox"
-                  value="Freshfruits"
+                  value="Turkey"
                 />
               </div>
               <div
@@ -188,22 +218,28 @@ const AllFarms = () => {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                   marginLeft: "-10px",
-                  width: "216px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
+                  width: "111%",
+                  height: "50px",
                 }}
               >
-                <p>Flowers</p>
+                <p
+                  style={{
+                    marginBottom: "auto",
+                  }}
+                >
+                  Flowers
+                </p>
                 <input
                   style={{
                     marginBottom: "12px",
                     height: "20px",
                     width: "20px",
-                    cursor: "pointer",
                   }}
                   type="checkbox"
-                  value="Flowers"
+                  value="Turkey"
                 />
               </div>
             </div>

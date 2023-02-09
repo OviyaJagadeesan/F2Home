@@ -55,6 +55,14 @@ const Header = () => {
     });
   };
 
+  const categoriesHandler=()=>{
+    navigate("/allcategories");
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    }); 
+  }
+
   console.log("View", category1);
 
   useEffect(() => {
@@ -80,6 +88,8 @@ const Header = () => {
           <div className="other-sec1" onClick={handleClick}>
             {show && (
               <div className="demo">
+                <div className="demo-card" onClick={categoriesHandler}>Shop By Category</div>
+                <div className="demo-card" onClick={farmsHandler} >Explore Farms</div>
                 <div className="demo-card">Search</div>
                 <div className="demo-card">Trichy</div>
                 <div className="demo-card" onClick={onclick}>

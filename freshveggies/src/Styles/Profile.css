@@ -87,11 +87,11 @@ html{
 }
 
 .checkbox-img{
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 0px 0px;
 }
 
 .signed-in{
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 0px 10px;
 }
 
 .form-check-input:checked{
@@ -116,6 +116,7 @@ html{
     background-color: #80B435;
     color: white;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .error-view {
@@ -187,3 +188,11 @@ a{
         display: none;
     }
 }
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type=checkbox] {
+    accent-color: #80b435;
+  }

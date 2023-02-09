@@ -7,7 +7,6 @@ html{
     overflow: hidden;
     width: 100vw;
 }
-
 .header {
     height: 80px;
     width: 100vw;
@@ -177,8 +176,8 @@ body {
 }
 
 .demo {
-    width: 200px;
-    height: 220px;
+    width: fit-content;
+    height: fit-content;
     background-color: gainsboro;
     margin-top: 55px;
     margin-left: -50px;

@@ -182,10 +182,10 @@ const MyCart = () => {
             </div>
             <div className="card total-div">
               <div className="row cart-body2">
-                <div className="col-lg-3 item-details-header4"></div>
-                <div className="col-lg-3 item-details-header4"></div>
-                <div className="col-lg-3 item-details-header2">Sub Total</div>
-                <div className="col-lg-3 item-details-header3">
+                <div className="col-lg-6 item-details-header4"></div>
+                <div className="col-lg-6 item-details-header4"></div>
+                <div className="col-lg-10 item-details-header2">Sub Total</div>
+                <div className="col-lg-2 item-details-header3">
                   {totalSavings > 0
                     ? totalSavings.toFixed(3)
                     : (totalSavings * -1).toFixed(3)}

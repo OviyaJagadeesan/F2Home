@@ -5,14 +5,6 @@ import "../Styles/Footer.css";
 const Footer = () => {
   const navigate = useNavigate();
 
-  // const homeHandler = () => {
-  //   navigate('/home');
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'auto'
-  //   });
-  // };
-
   const dairyHandler = () => {
     navigate("/dairy");
     window.scrollTo({
@@ -22,33 +14,21 @@ const Footer = () => {
   };
 
   const poultryHandler = (e) => {
-    // navigate("/poultry", { state: { productType: e.target.id } });
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: 'auto'
-    // });
     navigate("/poultry", { state: { productType: e.target.id } });
     window.scrollTo({
       top: 0,
       behavior: 'auto',
     });
   };
-  const scrollToTop = () => {
+  const homeHandler = () => {
     navigate('/home');
     window.scrollTo({
       top: 0,
       behavior: 'auto',
     });
   };
-  const seaFoodHandler = () => {
-    navigate("/seafood");
-    window.scrollTo({
-      top: 0,
-      behavior: 'auto',
-    });
-  };
 
-  const LoginandRegHandler = () => {
+  const LoginHandler = (tab2) => {
     navigate("/");
     window.scrollTo({
       top: 0,
@@ -57,7 +37,7 @@ const Footer = () => {
   };
 
   const RegHandler = () => {
-    navigate("/reg");
+    navigate("/");
     window.scrollTo({
       top: 0,
       behavior: 'auto',
@@ -97,7 +77,7 @@ const Footer = () => {
           </div>
           <div className="col-lg-2 col-md-6 col-sm-12 app-logo-div2">
             <div className="text-login3">Quick Links</div>
-            <div className="text-login2" onClick={scrollToTop}>
+            <div className="text-login2" onClick={homeHandler}>
               Home
             </div>
             <div className="text-login2">About Us</div>
@@ -107,7 +87,7 @@ const Footer = () => {
             <div className="text-login2">Terms & Conditions</div>
           </div>
           <div className="col-lg-4 col-md-6 col-sm-12 app-logo-div3">
-            <div className="text-login" onClick={LoginandRegHandler}>
+            <div className="text-login" onClick={LoginHandler}>
               Login to your account
             </div>
             <div className="text-login" onClick={RegHandler}>
