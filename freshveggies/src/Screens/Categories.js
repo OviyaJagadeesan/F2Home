@@ -2,11 +2,10 @@ import React, { useState,useContext,useEffect } from "react";
 import "../Styles/Categories.css";
 import { Link, useNavigate } from "react-router-dom";
 import Poultry from "./Poultry";
-// import { FilterContext } from "./context";
 
 const Categories = () => {
-  // const {checkValue,updateValue}=useContext(FilterContext);
   const navigate = useNavigate();
+  const [clicking, setIsClicking] = useState("");
 
   const dairyHandler = () => {
     navigate("/dairy");
@@ -32,17 +31,12 @@ const Categories = () => {
     });
   };
 
-  const [clicking, setIsClicking] = useState("");
-
   const ProductFilterHandler = (e) => {
-    // updateValue(e.target.id);
     setIsClicking(e.target.id);
     console.log("e.target.id", e.target.id);
     console.log("eggs", e.target.id);
     navigate("/poultry", { state: { productType: e.target.id } });
     window.scrollTo(0,0);
-    // 
-    // navigate("/poultry");
   };
 
   useEffect(() => {
@@ -112,7 +106,6 @@ const Categories = () => {
           View All Categories
         </button>
       </div>
-      {/* {clicking && <Link to="/poultry" state={{productType:clicking}}></Link>} */}
     </div>
   );
 };

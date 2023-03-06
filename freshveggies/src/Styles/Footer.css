@@ -67,13 +67,3 @@ html{
     width: 140px;
     height: 50px;
 }
-
-
-@media only screen and (min-width:280px) and (max-width:560px){
-    .app-logo-div,
-    .app-logo-div1,
-    .app-logo-div2,
-    .app-logo-div3{
-        
-    }
-}

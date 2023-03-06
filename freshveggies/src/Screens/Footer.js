@@ -9,7 +9,7 @@ const Footer = () => {
     navigate("/dairy");
     window.scrollTo({
       top: 0,
-      behavior: 'auto',
+      behavior: "auto",
     });
   };
 
@@ -17,14 +17,14 @@ const Footer = () => {
     navigate("/poultry", { state: { productType: e.target.id } });
     window.scrollTo({
       top: 0,
-      behavior: 'auto',
+      behavior: "auto",
     });
   };
   const homeHandler = () => {
-    navigate('/home');
+    navigate("/home");
     window.scrollTo({
       top: 0,
-      behavior: 'auto',
+      behavior: "auto",
     });
   };
 
@@ -32,7 +32,7 @@ const Footer = () => {
     navigate("/");
     window.scrollTo({
       top: 0,
-      behavior: 'auto',
+      behavior: "auto",
     });
   };
 
@@ -40,14 +40,14 @@ const Footer = () => {
     navigate("/");
     window.scrollTo({
       top: 0,
-      behavior: 'auto',
+      behavior: "auto",
     });
   };
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'auto',
+      behavior: "auto",
     });
   }, []);
   return (

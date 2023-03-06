@@ -24,7 +24,6 @@ function Profile() {
   const [regEmail, setRegEmail] = useState("");
   const [errorRegEmail, setErrorRegEmail] = useState("");
   const [basicActive, setBasicActive] = useState("tab1");
-
   const [fullNameReg, setFullNameReg] = useState("");
   const [emailReg, setEmailReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
@@ -57,7 +56,7 @@ function Profile() {
       })
       .then((response) => {
         console.log("res", response);
-        console.log("sucee", response.data.success);
+        console.log("succes", response.data.success);
         if (!response.data.success) {
           console.log("RES", response.data.success);
           console.log("Invalid username");
@@ -122,6 +121,26 @@ function Profile() {
   };
 
   const regButton = async () => {
+    setErrorLogEmail("");
+    setErrorLogPassword("");
+    if (!regEmail) {
+      setErrorRegEmail("Enter email address");
+    } else if (
+      !/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(regEmail)
+    ) {
+      setErrorRegEmail("Enter the proper email id");
+    } else {
+      console.log("Registered successfully...");
+      toast.error("Registered successfully...", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
     console.log("Registerr", fullNameReg, emailReg, passwordReg, pNoReg);
     const res = await postCall({
       nameReg: fullNameReg,
@@ -372,7 +391,6 @@ function Profile() {
                     }}
                   ></input>
                 </div>
-                {/* <p className="send-code">We will send a code to validate.</p> */}
                 <div className="proceed-btn" onClick={regButton}>
                   PROCEED
                 </div>

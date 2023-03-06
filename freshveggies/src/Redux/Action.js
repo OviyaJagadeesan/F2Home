@@ -18,4 +18,3 @@ export const deleteitem=(payload)=>{
         payload:payload,
     }
 }
-   

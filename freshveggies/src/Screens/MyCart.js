@@ -13,8 +13,6 @@ const MyCart = () => {
   const navigate = useNavigate();
 
   const [deleteHandler, setDeleteHandler] = useState(false);
-
-  let value = useSelector((payload) => payload);
   const dispatch = useDispatch();
 
   const addItemHandler = (name, farm, weight, notkd, kd, stringKD) => {
@@ -30,6 +28,8 @@ const MyCart = () => {
     setDeleteHandler(true);
     console.log("deletehandler", deleteHandler);
   };
+
+  let value = useSelector((payload) => payload);
 
   useEffect(() => {
     window.scrollTo({
@@ -202,7 +202,6 @@ const MyCart = () => {
       <div>
         <Header />
         <div className="whole-empty-div">
-           {/* <div className="empty-cart-img"></div> */}
            <img src={require("../Images/Empty-Cart.png")} className="img-return"/>
            <p className="empty-cart-text">Your Cart is Empty</p>
            <button className="go-home-button" onClick={goHomeHandler}>

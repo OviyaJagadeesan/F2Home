@@ -74,7 +74,6 @@ const AllFarms = () => {
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
-                  // backgroundColor: "#F7F7F7",
                   width: "111%",
                   marginTop: "20px",
                   height: "50px",

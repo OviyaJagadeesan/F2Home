@@ -2,16 +2,12 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import "../Styles/Poultry.css";
 import Footer from "./Footer";
-import { Card } from "react-bootstrap";
-import ProductDetails from "./ProductDetails";
 import { additem } from "../Redux/Action";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import ReadMore from "../Screens/ReadMore";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
-import { AiOutlineDown } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -22,8 +18,22 @@ const Poultry = () => {
   const [product, setProduct] = useState();
   const [addCartProduct, setAddCartProduct] = useState();
   const [show, setShow] = useState(false);
-
+  const [filterProducts, setFilterProducts] = useState();
+  const [selection, setSelection] = useState(false);
+  const [pFilter, setPFilter] = useState([]);
+  const [isReadMore, setIsReadMore] = useState(true);
+  const [allproducts, setAllProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [count, setCount] = useState();
+  const [ehandler, setEHandler] = useState(false);
+  const [chandler, setCHandler] = useState(false);
+  
+  let [pageNumber, setPageNumber] = useState();
+  let perPage = 8;
+  let locateItem = location ? location.state.productType : "";
+  let loc = location ? locateItem : null;
   let dataGet = useSelector((payload) => payload);
+  let filterProduct;
 
   const cartHandler = (e) => {
     console.log("ADDED");
@@ -50,11 +60,6 @@ const Poultry = () => {
     navigate("/home");
   };
 
-  let filterProduct;
-  const [filterProducts, setFilterProducts] = useState();
-  const [selection, setSelection] = useState(false);
-  const [pFilter, setPFilter] = useState([]);
-
   useEffect(() => {
     if (addCartProduct) {
       dispatch(additem(addCartProduct));
@@ -74,21 +79,11 @@ const Poultry = () => {
     }
   }, [pFilter]);
   product && navigate("/product-details", { state: product });
-
-  const [isReadMore, setIsReadMore] = useState(true);
+  
   const toggleReadMore = () => {
     setIsReadMore(!isReadMore);
   };
 
-  const [allproducts, setAllProducts] = useState([]);
-  let [pageNumber, setPageNumber] = useState();
-  const [currentPage, setCurrentPage] = useState(1);
-  let perPage = 8;
-
-  let locateItem = location ? location.state.productType : "";
-
-  let loc = location ? locateItem : null;
-  const [count, setCount] = useState();
   useEffect(() => {
     axios
       .get(
@@ -108,9 +103,6 @@ const Poultry = () => {
   const handlePageClick = (d) => {
     setCurrentPage(d.selected + 1);
   };
-
-  const [ehandler, setEHandler] = useState(false);
-  const [chandler, setCHandler] = useState(false);
 
   const FilterHandler = (value, checked) => {
     if (value === "Eggs") {
@@ -142,12 +134,6 @@ const Poultry = () => {
   useEffect(() => {
     console.log("E", ehandler, chandler);
   }, [ehandler, chandler]);
-
-  // const showToastMessage = () => {
-  //   console.log("ADD");
-    
-  //   console.log("Toast");
-  // };
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -204,11 +190,6 @@ const Poultry = () => {
                 }}
               >
                 <p style={{ marginTop: "20px" }}>Poultry</p>
-                {/* <AiOutlineDown
-                  style={{ height: "10px", width: "20px", marginTop: "30px" }}
-                  src={require("../Images/DownArrow.png")}
-                  alt="DownArrow"
-                /> */}
               </div>
               <div
                 style={{
@@ -246,7 +227,6 @@ const Poultry = () => {
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
-                  // backgroundColor: "#F7F7F7",
                   width: "111%",
                   marginTop: "20px",
                   height: "50px",
@@ -267,7 +247,6 @@ const Poultry = () => {
                   }}
                   type="checkbox"
                   value="Eggs"
-                  // onClick={FilterHandler}
                   onClick={(e) => {
                     FilterHandler(e.target.value, e.target.checked);
                     console.log(
@@ -306,7 +285,6 @@ const Poultry = () => {
                   }}
                   type="checkbox"
                   value="Chicken"
-                  // onClick={FilterHandler}
                   onClick={(e) => {
                     FilterHandler(e.target.value, e.target.checked);
                     console.log(
@@ -457,7 +435,6 @@ const Poultry = () => {
                             </div>
                           </div>
                           <button
-                            // className="cart-buttons"
                             className={`${
                               product.stack === "Add to Cart"
                                 ? "greenBG"
@@ -499,7 +476,6 @@ const Poultry = () => {
                           <div style={{ padding: "10px", height: "220px" }}>
                             <h6>
                               {product.name}
-                              {/* <ReadMore length={20}></ReadMore> */}
                             </h6>
                             <p className="farm-text">{product.farm}</p>
                             <ReadMore style={{ height: "20%" }} length={40}>
